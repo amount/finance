@@ -56,11 +56,6 @@ module Finance
       rate[0]
     end
 
-    def method_missing(name, *args, &block)
-      return self.inject(:+) if name.to_s == "sum"
-      super
-    end
-
     # calculate the net present value of a sequence of cash flows
     # @return [DecNum] the net present value
     # @param [Numeric] rate the discount rate to be applied
